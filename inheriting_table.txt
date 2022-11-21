@@ -1,0 +1,28 @@
+testdb=# create table city(name text, population int,elevation int);
+CREATE TABLE
+testdb=# create table capital(state varchar(100))INHERITS (city);
+CREATE TABLE
+
+
+
+testdb=# create table student(name varchar(100), age int, class varchar(10));
+CREATE TABLE
+testdb=# create table ayushstudent(like student including indexes);
+CREATE TABLE
+testdb=# \d ayushstudent 
+                   Table "public.ayushstudent"
+ Column |          Type          | Collation | Nullable | Default 
+--------+------------------------+-----------+----------+---------
+ name   | character varying(100) |           |          | 
+ age    | integer                |           |          | 
+ class  | character varying(10)  |           |          | 
+
+testdb=# \d student 
+                      Table "public.student"
+ Column |          Type          | Collation | Nullable | Default 
+--------+------------------------+-----------+----------+---------
+ name   | character varying(100) |           |          | 
+ age    | integer                |           |          | 
+ class  | character varying(10)  |           |          | 
+
+
